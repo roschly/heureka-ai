@@ -123,7 +123,7 @@ public class Heureka {
 	public static Solution uniformCostSearch(Problem problem){
 		Node node = new Node();
 		node.state = problem.initialState;
-		node.pathCost = 0;
+		node.gScore = 0;
 		NodePriorityQueue<Node> frontier = new NodePriorityQueue<Node>();
 		frontier.add(node);
 		Set<State> explored = new HashSet<State>();
