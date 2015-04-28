@@ -9,6 +9,7 @@ public class RouteProblem extends Problem {
 
 	private SimpleDirectedWeightedGraph<String, DefaultEdge> dwg = 
 			new SimpleDirectedWeightedGraph<String, DefaultEdge>(DefaultEdge.class);
+	private State goalState;
 
 	
 	public RouteProblem(){
@@ -22,9 +23,11 @@ public class RouteProblem extends Problem {
 		dwg.setEdgeWeight(e, 1);
 		
 	}
-	
 	public Boolean goalTest(State s){
-		return false;
+		if(s.equals(getGoalState())) {
+			return true;
+		}
+		else return false;
 	}
 	
 	public ArrayList<Action> actions(State state){
@@ -40,5 +43,9 @@ public class RouteProblem extends Problem {
 	
 	public State result(State state, Action action){
 		return new State();
+	}
+	
+	public State getGoalState() {
+		return goalState;
 	}
 }

@@ -6,7 +6,7 @@ public class Node {
 	public Node parent;
 	public Action action;
 	public double gScore;
-	public double fScore;
+	public double hScore;
 	
 	public Node(){}
 	
@@ -22,6 +22,12 @@ public class Node {
 		this.parent = parent;
 		this.action = action;
 		this.gScore = parent.gScore + problem.stepCost(parent.state, action);
+		this.hScore = RouteProblem.StraightLineD(this.state, RouteProblem.getGoalState());
+	}
+
+	public int getfScore() {
+		// TODO Auto-generated method stub
+		return gScore + hScore;
 	}
 
 }

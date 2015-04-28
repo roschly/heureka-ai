@@ -17,7 +17,7 @@ public class NodePriorityQueue<E> extends PriorityQueue<Node> {
 	public void replaceForHigherPathCost(Node child){
 		for (Iterator<Node> iter = this.iterator(); iter.hasNext();){
 			Node n = iter.next();
-			if ( n.state == child.state && n.gScore > child.gScore ){
+			if ( n.state == child.state && n.getfScore() > child.getfScore() ){
 				iter.remove();
 				this.add(child);
 				return;
