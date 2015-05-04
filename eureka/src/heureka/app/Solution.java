@@ -8,7 +8,7 @@ public class Solution {
 		this.exists = false; 
 	}
 	
-	public Solution(Node node) {
+	public Solution(Clause clause) {
 		this.exists = true;
 	}
 

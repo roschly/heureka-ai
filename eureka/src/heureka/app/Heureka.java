@@ -121,23 +121,23 @@ public class Heureka {
 	}
 	
 	public static Solution uniformCostSearch(Problem problem){
-		Node node = new Node();
-		node.state = problem.initialState;
-		node.gScore = 0;
-		NodePriorityQueue<Node> frontier = new NodePriorityQueue<Node>();
-		frontier.add(node);
-		Set<State> explored = new HashSet<State>();
+		Clause clause = new Clause();
+		clause.state = problem.initialState;
+		clause.gScore = 0;
+		NodePriorityQueue<Clause> frontier = new NodePriorityQueue<Clause>();
+		frontier.add(clause);
+		Set<String> explored = new HashSet<String>();
 				
 		do {
-			node = frontier.poll();
-			if (problem.goalTest(node.state) == true ) {
-				return new Solution(node);
+			clause = frontier.poll();
+			if (problem.goalTest(clause.state) == true ) {
+				return new Solution(clause);
 			}
 			else {
-				explored.add(node.state);
-				for (Action action : problem.actions(node.state)){
-					Node child = new Node();
-					child.childNode(problem, node, action);
+				explored.add(clause.state);
+				for (Action action : problem.actions(clause.state)){
+					Clause child = new Clause();
+					child.childNode(problem, clause, action);
 					if ( !explored.contains(child.state) && !frontier.containsState(child.state) ){
 						frontier.add(child);
 					}

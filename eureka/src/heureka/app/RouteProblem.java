@@ -9,7 +9,7 @@ public class RouteProblem extends Problem {
 
 	private SimpleDirectedWeightedGraph<String, DefaultEdge> dwg = 
 			new SimpleDirectedWeightedGraph<String, DefaultEdge>(DefaultEdge.class);
-	private State goalState;
+	private String goalState;
 
 	
 	public RouteProblem(){
@@ -18,34 +18,30 @@ public class RouteProblem extends Problem {
 		dwg.addVertex("c");
 		dwg.addEdge("a", "b");
 		
-		DefaultEdge e = dwg.addEdge("");
-		
-		dwg.setEdgeWeight(e, 1);
-		
 	}
-	public Boolean goalTest(State s){
+	public Boolean goalTest(String s){
 		if(s.equals(getGoalState())) {
 			return true;
 		}
 		else return false;
 	}
 	
-	public ArrayList<Action> actions(State state){
+	public ArrayList<Action> actions(String string){
 		return new ArrayList<Action>();
 	}
 	
-	public int stepCost(State state, Action action){
+	public int stepCost(String string, Action action){
 		
 		
 		
 		return 0;
 	}
 	
-	public State result(State state, Action action){
-		return new State();
+	public String result(String string, Action action){
+		return new String();
 	}
 	
-	public State getGoalState() {
+	public String getGoalState() {
 		return goalState;
 	}
 }
