@@ -1,6 +1,7 @@
 package heureka.inference.app;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Problem {
 
@@ -8,7 +9,7 @@ public abstract class Problem {
 
 	abstract Boolean goalTest(String state2);
 
-	abstract ArrayList<Action> actions(String state2);
+	abstract ArrayList<Action> actions(List<Integer> IDs);
 	
 	abstract int stepCost(String string, Action action);
 	

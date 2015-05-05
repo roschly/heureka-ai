@@ -20,7 +20,7 @@ public class Astar {
 			}
 			else {
 				explored.add(clause.state);
-				for (Action action : problem.actions(clause.state)){
+				for (Action action : problem.actions(clause.IDs)){
 					Clause child = new Clause();
 					child.childClause(clause);
 					if (!explored.contains(child.state) && !frontier.containsState(child.state) ){
