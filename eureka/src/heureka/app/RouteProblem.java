@@ -72,6 +72,7 @@ public class RouteProblem extends Problem {
 		dwg.setEdgeWeight(CD, this.straightLineDistance( this.coords.get("C"), this.coords.get("D") ));
 		*/
 		
+		/*
 		// 2: Test data with heuristic
 		this.setInitialState("A");
 		this.setGoalState("D");
@@ -80,6 +81,35 @@ public class RouteProblem extends Problem {
 		this.coords.put("B", new Coord(1.0, 3.0) );
 		this.coords.put("C", new Coord(3.0, 1.0) );
 		this.coords.put("D", new Coord(2.0, 5.0) );
+		
+		dwg.addVertex("A");
+		dwg.addVertex("B");
+		dwg.addVertex("C");
+		dwg.addVertex("D");
+		
+		DefaultWeightedEdge AB = dwg.addEdge("A", "B");
+		DefaultWeightedEdge AC = dwg.addEdge("A", "C");
+		//DefaultWeightedEdge BD = dwg.addEdge("B", "D");
+		DefaultWeightedEdge CD = dwg.addEdge("C", "D");
+		
+		dwg.setEdgeWeight(AB, this.straightLineDistance( this.coords.get("A"), this.coords.get("B") ));
+		dwg.setEdgeWeight(AC, this.straightLineDistance( this.coords.get("A"), this.coords.get("C") ));
+		//dwg.setEdgeWeight(BD, this.straightLineDistance( this.coords.get("B"), this.coords.get("D") ));
+		dwg.setEdgeWeight(CD, this.straightLineDistance( this.coords.get("C"), this.coords.get("D") ));
+		*/
+		
+		// Project data
+		this.setInitialState("A");
+		this.setGoalState("D");
+
+		this.coords.put("A", new Coord(10, 70));
+		this.coords.put("A", new Coord(10, 70));
+		
+		
+		this.coords.put("A", new Coord(2, 2) );
+		this.coords.put("B", new Coord(1, 3) );
+		this.coords.put("C", new Coord(3, 1) );
+		this.coords.put("D", new Coord(2, 5) );
 		
 		dwg.addVertex("A");
 		dwg.addVertex("B");
