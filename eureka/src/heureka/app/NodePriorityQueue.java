@@ -6,8 +6,7 @@ import java.util.PriorityQueue;
 
 public class NodePriorityQueue<E> extends PriorityQueue<Node> {
 	
-	public NodePriorityQueue(int bla, Comparator c){
-		// TODO: probably not done right
+	public NodePriorityQueue(int bla, Comparator<? super Node> c){
 		super(bla, c);
 	}
 	
