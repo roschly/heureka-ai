@@ -1,26 +1,51 @@
 package heureka.inference.app;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class InferenceProblem extends Problem{
 	private String goalState;
-	private ArrayList<Integer> CIDs = new ArrayList<Integer>();;
+	private ArrayList<Integer> CIDs = new ArrayList<Integer>();
+	private Map<Integer,Clause> clauses = new HashMap<Integer,Clause>();
 	
 	public InferenceProblem() {
-		String[] var1 = {"a"};
-		String[] var2 = {"b","c"};
-		String[] var3 = {"b"};
-		String[] var4 = {"c", "d"};
-		String[] var5 = {"c"};
-		String[] var6 = {"d"};
-		String[] var7 =  new String[0];
+		ArrayList<String> var1 = new ArrayList<String>() {{
+		    add("a");
+		}};
+		ArrayList<String> var2 = new ArrayList<String>() {{
+		    add("b");
+		    add("c");
+		}};
+		ArrayList<String> var3 = new ArrayList<String>() {{
+		    add("b");
+		}};
+		ArrayList<String> var4 = new ArrayList<String>() {{
+		    add("c");
+		    add("d");
+		}};
+		ArrayList<String> var5 = new ArrayList<String>() {{
+		    add("c");
+		}};
+		ArrayList<String> var6 = new ArrayList<String>() {{
+		    add("d");
+		}};
+		ArrayList<String> var7 = new ArrayList<String>();
 		
 		Clause cl1 = new Clause(var1,var2,1);
 		Clause cl2 = new Clause(var3,var3,2);
 		Clause cl3 = new Clause(var3,var4,3);
 		Clause cl4 = new Clause(var5,var7,4);
 		Clause cl5 = new Clause(var6,var7,5);
+		
+		clauses.put(1,cl1);
+		clauses.put(2,cl2);
+		clauses.put(3,cl3);
+		clauses.put(4,cl4);
+		clauses.put(5,cl5);
 		
 		CIDs.add(1);
 		CIDs.add(2);

@@ -21,8 +21,8 @@ public class Astar {
 			else {
 				explored.add(clause.state);
 				for (Action action : problem.actions(clause.IDs)){
-					Clause child = new Clause();
-					child.childClause(clause, problem);
+					Clause child = InferenceProblem.clauses.get??????
+					child.childClause(clause, problem, action);
 					if (!explored.contains(child.state) && !frontier.containsState(child.state) ){
 						frontier.add(child);
 					}
