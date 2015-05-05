@@ -11,9 +11,9 @@ public class NodePriorityQueue<E> extends PriorityQueue<Node> {
 		super(bla, c);
 	}
 	
-	public Boolean containsState(String state){
+	public Boolean containsState(State state){
 		for (Node node : this){
-			if (node.state == state){
+			if (node.state.customEquals(state)){
 				return true;
 			}
 		}
@@ -23,7 +23,7 @@ public class NodePriorityQueue<E> extends PriorityQueue<Node> {
 	public void replaceForHigherPathCost(Node child){
 		for (Iterator<Node> iter = this.iterator(); iter.hasNext();){
 			Node node = iter.next();
-			if ( node.state == child.state && node.pathCost > child.pathCost ){
+			if ( node.state.customEquals(child.state) && node.pathCost > child.pathCost ){
 				iter.remove();
 				this.add(child);
 				return;

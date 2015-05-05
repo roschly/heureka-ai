@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public abstract class Problem {
 
-	public String initialState;
+	public State initialState;
 	
-	abstract void setInitialState(String state);
+	abstract void setInitialState(State state);
 
-	abstract Boolean goalTest(String state);
+	abstract Boolean goalTest(State state);
 
-	abstract ArrayList<Action> actions(String state);
+	abstract ArrayList<Action> actions(State state);
 	
-	abstract Double stepCost(String state, Action action);
+	abstract Double stepCost(State state, Action action);
 	
-	abstract String result(String state, Action action);
+	abstract State result(State state, Action action);
 	
 
 }

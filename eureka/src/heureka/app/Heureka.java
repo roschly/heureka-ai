@@ -4,8 +4,8 @@ public class Heureka {
 	
 	public static void main(String args[]){
 		
-		RouteProblem problem = new RouteProblem();
-		Solution s = Algorithms.aStarSearch(problem);
+		ClauseProblem problem = new ClauseProblem();
+		Solution s = Algorithms.uniformCostSearch(problem);
 		System.out.println(s.exists);
 		
 		
