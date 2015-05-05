@@ -2,25 +2,33 @@ package heureka.app;
 
 public class Node {
 
-	public State state;
+	public String state;
 	public Node parent;
 	public Action action;
-	public int pathCost;
+	public Double pathCost;
+	public Double heuristicCost;
+	public Double totalCost;
 	
 	public Node(){}
 	
-	public Node(State state, Node parent, Action action, int pathCost){
+	public Node(String state, Node parent, Action action, Double pathCost){
 		this.state = state;
 		this.parent = parent;
 		this.action = action;
 		this.pathCost = pathCost;
 	}
 	
-	public void childNode(Problem problem, Node parent, Action action){
+	public void childNode(RouteProblem problem, Node parent, Action action){
 		this.state = problem.result(parent.state, action);
 		this.parent = parent;
 		this.action = action;
 		this.pathCost = parent.pathCost + problem.stepCost(parent.state, action);
+		this.heuristicCost = problem.heuristicFunction(this.state);
+		this.totalCost = this.pathCost + this.heuristicCost;
+	}
+	
+	public Double costFunction(){
+		return this.pathCost + this.heuristicCost;
 	}
 
 }
