@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class Algorithms {
 	
+	/*
 	public static Solution uniformCostSearch(RouteProblem problem){
 		
 		Comparator<Node> comparator = new PathCostComparator();
@@ -41,6 +42,7 @@ public class Algorithms {
 		
 		return new Solution();
 	}
+	*/
 	
 	public static Solution aStarSearch(RouteProblem problem){
 		
@@ -60,8 +62,6 @@ public class Algorithms {
 			}
 			else {
 				explored.add(node.state);
-				System.out.println("Explored: " + node.state);
-				// Actions
 				for (Action action : problem.actions(node.state)){
 					Node child = new Node();
 					child.childNode(problem, node, action);

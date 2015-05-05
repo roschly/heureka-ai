@@ -6,9 +6,8 @@ import java.util.PriorityQueue;
 
 public class NodePriorityQueue<E> extends PriorityQueue<Node> {
 	
-	public NodePriorityQueue(int bla, Comparator c){
-		// TODO: probably not done right
-		super(bla, c);
+	public NodePriorityQueue(int capacity, Comparator<? super Node> c){
+		super(capacity, c);
 	}
 	
 	public Boolean containsState(String state){
