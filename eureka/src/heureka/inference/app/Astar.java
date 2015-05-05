@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Astar {
 	
-	public static Solution AStar(Problem problem){
+	public static Solution AStar(InferenceProblem problem){
 		Clause clause = new Clause();
 		clause.state = problem.initialState;
 		clause.gScore = 0;
@@ -22,7 +22,7 @@ public class Astar {
 				explored.add(clause.state);
 				for (Action action : problem.actions(clause.IDs)){
 					Clause child = new Clause();
-					child.childClause(clause);
+					child.childClause(clause, problem);
 					if (!explored.contains(child.state) && !frontier.containsState(child.state) ){
 						frontier.add(child);
 					}

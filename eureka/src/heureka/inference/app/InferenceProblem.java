@@ -5,7 +5,7 @@ import java.util.List;
 
 public class InferenceProblem extends Problem{
 	private String goalState;
-	private int[] CIDs;
+	private ArrayList<Integer> CIDs = new ArrayList<Integer>();;
 	
 	public InferenceProblem() {
 		String[] var1 = {"a"};
@@ -22,8 +22,11 @@ public class InferenceProblem extends Problem{
 		Clause cl4 = new Clause(var5,var7,4);
 		Clause cl5 = new Clause(var6,var7,5);
 		
-		CIDs = new int[] {1,2,3,4,5};
-		
+		CIDs.add(1);
+		CIDs.add(2);
+		CIDs.add(3);
+		CIDs.add(4);
+		CIDs.add(5);
 	}
 
 	@Override
@@ -52,8 +55,19 @@ public class InferenceProblem extends Problem{
 
 	@Override
 	ArrayList<Action> actions(List<Integer> IDs) {
+		ArrayList<Action> actionlist = new ArrayList<Action>();
+		ArrayList<Integer> dummy = new ArrayList<Integer>();
+		dummy.addAll(CIDs);
+		dummy.removeAll(IDs);
+		for(Integer ID: dummy){
+			actionlist.add(new Action(ID));
+		}
 
-		return null;
+		return actionlist;
+	}
+
+	public ArrayList<Integer> getCIDs() {
+		return CIDs;
 	}
 	
 }

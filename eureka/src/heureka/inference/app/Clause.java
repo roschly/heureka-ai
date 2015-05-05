@@ -24,11 +24,11 @@ public class Clause {
 		this.hScore = positive.length + negative.length;
 	}
 	
-	public void childClause(Clause parent){
+	public void childClause(Clause parent, InferenceProblem problem){
 		this.parent = parent;
 		this.IDs.addAll(parent.IDs);
-		if(true){
-			this.IDs.add(ID);
+		if(IDs.contains(ID)){
+			IDs.remove(ID);
 		}
 		this.gScore = parent.gScore + 1;
 		this.state = this.toString();
