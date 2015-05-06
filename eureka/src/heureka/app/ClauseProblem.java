@@ -13,7 +13,7 @@ public class ClauseProblem extends Problem{
 	public ClauseProblem(){
 		
 		this.goalState = 0;
-		this.initialState = new State( new Literal("a", -1) );
+		this.initialState = new State( "-a" );
 		
 		
 		// Has solution 

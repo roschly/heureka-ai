@@ -13,8 +13,6 @@ public class Solution {
 	
 	public Solution(Node node) {
 		this.exists = true;
-		
-		//ArrayList<State> tempPath = new ArrayList<State>();
 		Node currentNode = node;
 		
 		while (currentNode != null){

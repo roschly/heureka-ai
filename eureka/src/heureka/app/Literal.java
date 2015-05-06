@@ -15,11 +15,6 @@ public class Literal {
 		}
 	}
 	
-	public Literal(String letter, Integer sign){
-		this.letter = letter;
-		this.sign = sign;
-	}
-	
 	public Boolean negates(Literal lit){
 		if (this.letter.equals(lit.letter) && this.sign != lit.sign){
 			return true;

@@ -15,14 +15,6 @@ public class State {
 		}
 	}
 	
-	public State(ArrayList<Literal> literals){
-		this.literals = literals;
-	}
-	
-	public State(Literal lit){
-		this.literals.add(lit);
-	}
-	
 	public String toString(){
 		String str = "";
 		for (Literal lit : this.literals){
@@ -48,11 +40,7 @@ public class State {
 				if (thisLit.customEquals( state.literals.get(i) )){
 					break;
 				}
-				/*
-				if ( thisLit.letter.equals( state.literals.get(i).letter ) && thisLit.sign.equals( state.literals.get(i).sign ) ){
-					break;
-				}
-				*/
+
 				// end of list
 				if (i == state.literals.size() - 1){
 					return false;
