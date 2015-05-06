@@ -1,7 +1,7 @@
 package heureka.app;
 
 import java.util.Comparator;
-import java.util.HashSet;
+
 
 public class Algorithms {
 	
@@ -62,7 +62,6 @@ public class Algorithms {
 			}
 			else {
 				explored.add(node.state);
-				System.out.println("Explored: " + node.state.toString());
 				
 				for (Action action : problem.actions(node.state)){
 					

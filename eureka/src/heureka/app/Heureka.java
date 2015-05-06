@@ -1,6 +1,6 @@
 package heureka.app;
 
-import java.util.Comparator;
+
 
 public class Heureka {
 	
@@ -8,8 +8,13 @@ public class Heureka {
 		
 		ClauseProblem problem = new ClauseProblem();
 		Solution s = Algorithms.aStarSearch(problem);
-		System.out.println(s.exists);
 		
-		
+		if (s.exists){
+			System.out.println("Solution found!");
+			s.printSolution();
+		}
+		else {
+			System.out.println("No solution");
+		}
 	}
 }

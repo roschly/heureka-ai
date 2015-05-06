@@ -15,18 +15,18 @@ public class ClauseProblem extends Problem{
 		this.goalState = 0;
 		this.initialState = new State( new Literal("a", -1) );
 		
-		/*
+		
 		// Has solution 
 		this.KB.add( new State("a -b") );
 		this.KB.add( new State("b -c") );
 		this.KB.add( new State("c") );
-		*/
 		
 		
+		/*
 		// No solution, infinite loop
 		this.KB.add( new State("a -b") );
 		this.KB.add( new State("b -c") );
-			
+		*/
 	}
 
 
