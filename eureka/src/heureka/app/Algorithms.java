@@ -69,7 +69,7 @@ public class Algorithms {
 					Node child = new Node();
 					child.childNode(problem, node, action);
 					
-					if ( !explored.contains(child.state) && !frontier.containsState(child.state) ){
+					if ( !explored.containsState(child.state) && !frontier.containsState(child.state) ){
 						frontier.add(child);
 					}
 					else {
