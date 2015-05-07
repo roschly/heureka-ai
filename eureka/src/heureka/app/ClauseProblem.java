@@ -15,12 +15,36 @@ public class ClauseProblem extends Problem{
 		this.goalState = 0;
 		this.initialState = new State( "-a" );
 		
-		
+		/*
 		// Has solution 
 		this.KB.add( new State("a -b") );
 		this.KB.add( new State("b -c") );
 		this.KB.add( new State("c") );
+		*/
 		
+		
+		//Has solution, finds wrong solution??
+		this.KB.add( new State("a -b") );
+		this.KB.add( new State("b -c") );
+		this.KB.add( new State("c -d") );
+		this.KB.add( new State("d -e") );
+		this.KB.add( new State("e -f") );
+		this.KB.add( new State("f -g") );
+		this.KB.add( new State("g -h") );
+		this.KB.add( new State("h -i") );
+		this.KB.add( new State("i") );
+		
+		
+		
+		/*
+		//Should fail, but doesnt
+		this.KB.add( new State("a -b -c -d") );
+		this.KB.add( new State("b -e") );
+		this.KB.add( new State("e -f") );
+		this.KB.add( new State("f") );
+		this.KB.add( new State("c") );
+		//this.KB.add( new State("d") );
+		*/
 		
 		/*
 		// No solution, infinite loop
